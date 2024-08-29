@@ -8,9 +8,29 @@
            Can you guess it?</p>
       <input type ="number" placeholder ="Insert Number"
         id="guess"></input>
-    <button>Guess</button>
-    <p>result</p>
+    <button onclick="checkGuess()">Guess</button>
+    <p id="result></p>
   </body>
+  <script>
+       let secretNumber = Math.floor(Math.random() * 100) + 1;
+
+    function checkGuess(){
+
+        let guess = document.getElementById("guess").value;
+        let resultElement = document.getElementById("result");
+
+      if(guess == secretNumber)
+      {
+          resultElement.textContent = "Congraz, Betul!!"; 
+    }
+      else if (guess > secretNumber){
+           resultElement.textContent = "Nombor Besar, nombor lebih kecil dari tekaan nombor"
+      }
+      else{
+           resultElement.textContent = "Nombor Kecil, nombor lebih besar dari tekaan nombor"
+      }
+   }   
+  </script>
 </html>
 
 
